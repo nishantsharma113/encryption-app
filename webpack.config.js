@@ -17,6 +17,12 @@ module.exports = async function (env, argv) {
     }
   }, argv);
   
+  // Configure output to use relative paths
+  config.output = {
+    ...config.output,
+    publicPath: './'
+  };
+
   // Add file-loader for image assets
   config.module.rules.push({
     test: /\.(png|jpe?g|gif|ico)$/i,
@@ -25,7 +31,8 @@ module.exports = async function (env, argv) {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'assets'
+          outputPath: 'assets',
+          publicPath: '../assets'
         }
       }
     ]
