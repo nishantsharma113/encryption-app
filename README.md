@@ -1,50 +1,77 @@
-# Welcome to your Expo app 👋
+# Encryption App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native web application for encrypting and decrypting data using various encryption methods.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Multiple encryption methods:
+  - AES-CBC (Advanced Encryption Standard with CBC mode)
+  - AES-ECB (Advanced Encryption Standard with ECB mode)
+  - Base64 Encoding/Decoding
 
-   ```bash
-   npm install
-   ```
+- Persistent data storage
+- JSON data support
+- Secure key management
+- Modern Material Design UI
 
-2. Start the app
+## Technologies Used
 
-   ```bash
-    npx expo start
-   ```
+- React Native
+- Expo
+- React Native Paper
+- CryptoJS
+- Local Storage for data persistence
 
-In the output, you'll find options to open the app in a
+## Installation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone [your-repository-url]
+cd encryption-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Usage
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Choose an encryption method:
+   - AES-CBC: Secure encryption with random IV
+   - AES-ECB: Fixed key encryption
+   - Base64: Simple text encoding
 
-## Join the community
+2. Enter your data:
+   - Support for both text and JSON data
+   - Automatic data persistence
+   - Secure key input for AES-CBC
 
-Join our community of developers creating universal apps.
+3. Encrypt or Decrypt:
+   - Click 'Encrypt' to secure your data
+   - Click 'Decrypt' to recover original data
+   - Results are automatically copied to clipboard
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Security Notes
+
+- AES-CBC is recommended for secure encryption
+- Base64 is not encryption, just encoding
+- Store encryption keys securely
+- ECB mode is less secure but compatible with legacy systems
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
