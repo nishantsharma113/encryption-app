@@ -20,9 +20,16 @@ module.exports = async function (env, argv) {
   // Configure output to use relative paths
   config.output = {
     ...config.output,
-    publicPath: './',
+    publicPath: '',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'static/js/[name].[contenthash:8].js',
     chunkFilename: 'static/js/[name].[contenthash:8].chunk.js'
+  };
+
+  // Configure webpack dev server
+  config.devServer = {
+    ...config.devServer,
+    historyApiFallback: true
   };
 
   // Add file-loader for image assets
@@ -33,7 +40,7 @@ module.exports = async function (env, argv) {
         loader: 'file-loader',
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
-          publicPath: './'
+          publicPath: ''
         }
       }
     ]
