@@ -20,7 +20,9 @@ module.exports = async function (env, argv) {
   // Configure output to use relative paths
   config.output = {
     ...config.output,
-    publicPath: './'
+    publicPath: './',
+    filename: 'static/js/[name].[contenthash:8].js',
+    chunkFilename: 'static/js/[name].[contenthash:8].chunk.js'
   };
 
   // Add file-loader for image assets
@@ -30,9 +32,8 @@ module.exports = async function (env, argv) {
       {
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: 'assets',
-          publicPath: '../assets'
+          name: 'static/media/[name].[hash:8].[ext]',
+          publicPath: './'
         }
       }
     ]
