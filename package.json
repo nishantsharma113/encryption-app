@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "build": "npx expo export --platform web",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -b main -d dist"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.12.52",
